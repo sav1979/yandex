@@ -1,0 +1,35 @@
+import os
+def _init_(self, token):
+    
+def get_headers(self):
+    return{
+        'Content-Type' : 'application/json',
+        'Authorizetion : f'Qauth {self.token}'
+        }
+
+TOKEN = 'MY TOKEN YANDEX.txt'
+
+
+
+yand = YandexDisk(token = TOKEN)
+print(yand.get_files_disk())
+
+def get_files_disk(self):
+    files_url = 'https://disk.yandex.ru/client/recent?idApp=client&dialog=slider&idDialog=%2Fdisk%2F%D0%97%D0%B8%D0%BC%D0%B0.jpg'
+    headers = self.get_headers()
+    respons = requasts.get(files_url, headers = headers)
+    return respons.json()
+
+def get_upload_link(self, disk_file_path):
+    upload_url = 
+    headers = self.get_headers()
+    param = {'path' : disk_file_path, 'overwrate : true'}
+    respons = requasts.get(upload_url, headers = headers, params = params)
+    return respons.json()
+
+def upload_file _to_disk(self, disk_file_path):   
+    href = self.get_upload_link(disk_file_path = disk_file_path).get('href', '')
+    respons = requasts.put(href, data = open(filename, 'rb'))
+    respons = raise_for_status()
+    if respons.status.code == 201
+        print('ok')
